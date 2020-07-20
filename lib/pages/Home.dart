@@ -3,6 +3,7 @@ import 'package:petfood/utils/clipper.dart';
 import 'package:petfood/utils/clipperButton.dart';
 import 'package:sleek_circular_slider/sleek_circular_slider.dart';
 import 'package:liquid_progress_indicator/liquid_progress_indicator.dart';
+import 'package:petfood/utils/Progress.dart';
 class Home extends StatefulWidget {
   @override
   _loginState createState() => _loginState();
@@ -98,23 +99,71 @@ class _loginState extends State<Home> {
               // )
               Padding(
 
-                child:SizedBox(
-                width: 100,
-                height: 100,
-                child: LiquidCircularProgressIndicator(
-                  backgroundColor: Colors.white,
-                  valueColor: AlwaysStoppedAnimation(Colors.purple),
-                  borderColor: Color(0xFF42BBFF),
-                  borderWidth: 5.0,
-                  value: .3,
-                  
-                ),
-              ) ,
+                child:_AnimatedLiquidCircularProgressIndicator(),
               padding: EdgeInsets.fromLTRB(0, 0, 40, 0) ,
               ),
             ],
           )
         ],
+      ),
+    );
+  }
+}
+
+
+
+class _AnimatedLiquidCircularProgressIndicator extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() =>
+      _AnimatedLiquidCircularProgressIndicatorState();
+}
+
+class _AnimatedLiquidCircularProgressIndicatorState
+    extends State<_AnimatedLiquidCircularProgressIndicator>
+    with SingleTickerProviderStateMixin {
+  AnimationController _animationController;
+
+  @override
+  void initState() {
+    super.initState();
+    _animationController = AnimationController(
+      vsync: this,
+      duration: Duration(seconds: 10),
+    );
+
+    _animationController.addListener(() => setState(() {if(percentage==99){
+      print("Lista");
+    }}));
+    _animationController.repeat();
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final percentage = _animationController.value * 100;
+    
+    return Center(
+      child: SizedBox(
+        width: 100.0,
+        height: 100.0,
+        child: LiquidCircularProgressIndicator(
+          value: _animationController.value,
+          backgroundColor: Colors.purpleAccent,
+          valueColor: AlwaysStoppedAnimation(Colors.blue),
+          center: Text(
+            "${percentage.toStringAsFixed(0)}%",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
       ),
     );
   }
