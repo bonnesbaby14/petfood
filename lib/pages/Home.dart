@@ -4,6 +4,7 @@ import 'package:petfood/utils/clipperButton.dart';
 import 'package:sleek_circular_slider/sleek_circular_slider.dart';
 import 'package:liquid_progress_indicator/liquid_progress_indicator.dart';
 import 'package:petfood/utils/Progress.dart';
+
 class Home extends StatefulWidget {
   @override
   _loginState createState() => _loginState();
@@ -98,9 +99,8 @@ class _loginState extends State<Home> {
               //   ),
               // )
               Padding(
-
-                child:_AnimatedLiquidCircularProgressIndicator(),
-              padding: EdgeInsets.fromLTRB(0, 0, 40, 0) ,
+                child: _AnimatedLiquidCircularProgressIndicator(),
+                padding: EdgeInsets.fromLTRB(10, 0, 25, 0),
               ),
             ],
           )
@@ -109,8 +109,6 @@ class _loginState extends State<Home> {
     );
   }
 }
-
-
 
 class _AnimatedLiquidCircularProgressIndicator extends StatefulWidget {
   @override
@@ -128,21 +126,16 @@ class _AnimatedLiquidCircularProgressIndicatorState
     super.initState();
     _animationController = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 5),
-      
+      duration: Duration(seconds: 15),
     );
 
-    _animationController.addListener(() => setState(() {
-      
-    }
-    )
-    );
+    _animationController.addListener(() => setState(() {}));
     _animationController.repeat();
   }
 
   @override
   void dispose() {
-        print("finalizado");
+    print("finalizado");
     _animationController.dispose();
 
     super.dispose();
@@ -151,13 +144,13 @@ class _AnimatedLiquidCircularProgressIndicatorState
   @override
   Widget build(BuildContext context) {
     final percentage = _animationController.value * 100;
-    if(percentage==99){
+    if (percentage == 99) {
       Navigator.of(context).pushNamed("home");
     }
     return Center(
       child: SizedBox(
-        width: 100.0,
-        height: 100.0,
+        width: 98.0,
+        height: 98.0,
         child: LiquidCircularProgressIndicator(
           value: _animationController.value,
           backgroundColor: Colors.purpleAccent,
