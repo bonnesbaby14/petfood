@@ -128,25 +128,32 @@ class _AnimatedLiquidCircularProgressIndicatorState
     super.initState();
     _animationController = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 10),
+      duration: Duration(seconds: 5),
+      
     );
 
-    _animationController.addListener(() => setState(() {if(percentage==99){
-      print("Lista");
-    }}));
+    _animationController.addListener(() => setState(() {
+      
+    }
+    )
+    );
     _animationController.repeat();
   }
 
   @override
   void dispose() {
+        print("finalizado");
     _animationController.dispose();
+
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     final percentage = _animationController.value * 100;
-    
+    if(percentage==99){
+      Navigator.of(context).pushNamed("home");
+    }
     return Center(
       child: SizedBox(
         width: 100.0,
