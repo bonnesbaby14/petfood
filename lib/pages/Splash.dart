@@ -5,12 +5,12 @@ import 'package:sleek_circular_slider/sleek_circular_slider.dart';
 import 'package:liquid_progress_indicator/liquid_progress_indicator.dart';
 import 'package:petfood/utils/Progress.dart';
 
-class Home extends StatefulWidget {
+class Splash extends StatefulWidget {
   @override
   _loginState createState() => _loginState();
 }
 
-class _loginState extends State<Home> {
+class _loginState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
