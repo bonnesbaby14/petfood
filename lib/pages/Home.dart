@@ -119,6 +119,7 @@ class _AnimatedLiquidCircularProgressIndicator extends StatefulWidget {
 class _AnimatedLiquidCircularProgressIndicatorState
     extends State<_AnimatedLiquidCircularProgressIndicator>
     with SingleTickerProviderStateMixin {
+
   AnimationController _animationController;
 
   @override
@@ -126,10 +127,17 @@ class _AnimatedLiquidCircularProgressIndicatorState
     super.initState();
     _animationController = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 15),
+      duration: Duration(seconds: 5),
     );
 
     _animationController.addListener(() => setState(() {}));
+    _animationController.addStatusListener((status) {
+      if(status == AnimationStatus.completed) {
+    // custom code here
+    print("object");
+    _animationController.reverse();
+  }
+    });
     _animationController.repeat();
   }
 
@@ -144,9 +152,7 @@ class _AnimatedLiquidCircularProgressIndicatorState
   @override
   Widget build(BuildContext context) {
     final percentage = _animationController.value * 100;
-    if (percentage == 99) {
-      Navigator.of(context).pushNamed("home");
-    }
+  
     return Center(
       child: SizedBox(
         width: 98.0,
@@ -168,3 +174,4 @@ class _AnimatedLiquidCircularProgressIndicatorState
     );
   }
 }
+

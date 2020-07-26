@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'pages/Home.dart';
-import 'pages/login.dart';
+import 'pages/HomePage.dart';
 import "package:flutter/services.dart";
 import 'dart:io';
 void main() {
@@ -38,8 +38,8 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       routes:{
-        "/":(BuildContext context)=>Home(),
-        "login":(BuildContext context)=>Login(),
+        "/":(BuildContext context)=>HomePage(),
+        "login":(BuildContext context)=>Home(),
 
       },
     );
