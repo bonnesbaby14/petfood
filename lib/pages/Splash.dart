@@ -4,6 +4,9 @@ import 'package:petfood/utils/clipperButton.dart';
 import 'package:sleek_circular_slider/sleek_circular_slider.dart';
 import 'package:liquid_progress_indicator/liquid_progress_indicator.dart';
 import 'package:petfood/utils/Progress.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'dart:ui';
+import 'dart:async';
 
 class Splash extends StatefulWidget {
   @override
@@ -11,6 +14,16 @@ class Splash extends StatefulWidget {
 }
 
 class _loginState extends State<Splash> {
+@override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Timer _timer = Timer(const Duration(seconds: 5),(){print("hpñlaa");
+    
+    Navigator.pushReplacementNamed(context, "home");
+    }  );
+
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -157,19 +170,10 @@ class _AnimatedLiquidCircularProgressIndicatorState
       child: SizedBox(
         width: 98.0,
         height: 98.0,
-        child: LiquidCircularProgressIndicator(
-          value: _animationController.value,
-          backgroundColor: Colors.purpleAccent,
-          valueColor: AlwaysStoppedAnimation(Colors.blue),
-          center: Text(
-            "${percentage.toStringAsFixed(0)}%",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 20.0,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
+        child: SpinKitFadingGrid(
+  color: Colors.purpleAccent,
+  size: 50.0,
+)
       ),
     );
   }

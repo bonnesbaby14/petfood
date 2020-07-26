@@ -38,8 +38,8 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       routes:{
-        "/":(BuildContext context)=>HomePage(),
-        "Splash":(BuildContext context)=>Splash(),
+        "/":(BuildContext context)=>Splash(),
+        "home":(BuildContext context)=>HomePage(),
 
       },
     );
