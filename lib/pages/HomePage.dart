@@ -71,7 +71,7 @@ class _HomePageState extends State<HomePage> {
                                   clipper: AppClipper(
                                       cornerSize: 25, diagonalHeight: 100),
                                   child: Container(
-                                    color: Color(0xFFA5915C),
+                                    color: Color(0xFF0FC9F2),
                                     width: 230,
                                     child: Stack(
                                       children: <Widget>[
@@ -101,7 +101,7 @@ class _HomePageState extends State<HomePage> {
                                 ),
                               ),
                               Positioned(
-                                  bottom: 130,
+                                  bottom: 115,
                                   right: 10,
                                   child: CircularPercentIndicator(
                                     radius: 100.0,
@@ -115,7 +115,7 @@ class _HomePageState extends State<HomePage> {
                                         height: 2.0,
                                       ),
                                     ),
-                                    progressColor: Color(0xFF120F17),
+                                    progressColor: Color(0xFFF2B90C),
                                   )),
                             ],
                           ),
@@ -135,7 +135,7 @@ class _HomePageState extends State<HomePage> {
                                   clipper: AppClipper(
                                       cornerSize: 25, diagonalHeight: 100),
                                   child: Container(
-                                    color: Color(0xFF132F3B),
+                                    color: Color(0xFF056CF2),
                                     width: 230,
                                     child: Stack(
                                       children: <Widget>[
@@ -147,7 +147,7 @@ class _HomePageState extends State<HomePage> {
                                             children: <Widget>[
                                               Expanded(child: SizedBox()),
                                               Container(
-                                                width: 160,
+                                                width: 165,
                                                 child: Text(
                                                   "AGUA NO CONSUMIBLE",
                                                   style: TextStyle(
@@ -165,7 +165,7 @@ class _HomePageState extends State<HomePage> {
                                 ),
                               ),
                               Positioned(
-                                  bottom: 130,
+                                  bottom: 115,
                                   right: 10,
                                   child: CircularPercentIndicator(
                                     radius: 100.0,
@@ -179,7 +179,7 @@ class _HomePageState extends State<HomePage> {
                                         height: 2.0,
                                       ),
                                     ),
-                                    progressColor: Color(0xFF120F17),
+                                    progressColor: Color(0xFFF2B90C),
                                   )),
                             ],
                           ),
@@ -200,7 +200,7 @@ class _HomePageState extends State<HomePage> {
                                   clipper: AppClipper(
                                       cornerSize: 25, diagonalHeight: 100),
                                   child: Container(
-                                    color: Color(0xFF027368),
+                                    color: Color(0xFF05AFF2),
                                     width: 230,
                                     child: Stack(
                                       children: <Widget>[
@@ -212,7 +212,7 @@ class _HomePageState extends State<HomePage> {
                                             children: <Widget>[
                                               Expanded(child: SizedBox()),
                                               Container(
-                                                width: 155,
+                                                width: 165,
                                                 child: Text(
                                                   "AGUA CONSUMIBLE",
                                                   style: TextStyle(
@@ -230,7 +230,7 @@ class _HomePageState extends State<HomePage> {
                                 ),
                               ),
                               Positioned(
-                                  bottom: 130,
+                                  bottom: 115,
                                   right: 10,
                                   child: CircularPercentIndicator(
                                     radius: 100.0,
@@ -244,7 +244,7 @@ class _HomePageState extends State<HomePage> {
                                         height: 2.0,
                                       ),
                                     ),
-                                    progressColor: Color(0xFF120F17),
+                                    progressColor: Color(0xFFF2B90C),
                                   )),
                             ],
                           ),
@@ -257,30 +257,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          SizedBox(height: 16),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Text(
-                  "JUST FOR YOU",
-                  style: TextStyle(
-                    color: Colors.black54,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Text(
-                  "VIEW ALL",
-                  style: TextStyle(
-                    color: AppColors.greenColor,
-                    fontSize: 12,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(height: 24),
+          SizedBox(height: 6),
           GestureDetector(
             onTap: () {
               print("hpoa");
@@ -315,46 +292,33 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ]),
                   SizedBox(width: 16),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Container(
-                          width: MediaQuery.of(context).size.width * .4,
-                          child: Text(
-                            "HORARIO",
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                        Text(
-                          "AGUA",
+                  Column(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 12),
+                        child: Text(
+                          "CONFIGURAR",
                           style: TextStyle(
-                            color: Colors.black26,
-                            height: 1.5,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
                           ),
                         ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 12),
-                    child: Text(
-                      "CONFIGURAR",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
                       ),
-                    ),
+                      Text(
+                        "Cambio de Agua",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.black26,
+                          height: 1.5,
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
             ),
           ),
-          SizedBox(height: 24),
+          SizedBox(height: 6),
           GestureDetector(
             onTap: () {
               print("hpoa");
@@ -389,46 +353,33 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ]),
                   SizedBox(width: 16),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Container(
-                          width: MediaQuery.of(context).size.width * .4,
-                          child: Text(
-                            "HORARIO",
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                        Text(
-                          "COMIDA",
+                  Column(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 12),
+                        child: Text(
+                          "CONFIGURAR",
                           style: TextStyle(
-                            color: Colors.black26,
-                            height: 1.5,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
                           ),
                         ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 12),
-                    child: Text(
-                      "CONFIGURAR",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
                       ),
-                    ),
+                      Text(
+                        "Servir comida",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.black26,
+                          height: 1.5,
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
             ),
           ),
-          SizedBox(height: 24),
+          SizedBox(height: 6),
           GestureDetector(
             onTap: () {
               print("hpoa");
@@ -463,39 +414,33 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ]),
                   SizedBox(width: 16),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Container(
-                          width: MediaQuery.of(context).size.width * .4,
-                          child: Text(
-                            "AGUA",
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                            ),
+                  Column(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 12),
+                        child: Text(
+                          "CAMBIAR COMIDA",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
                           ),
                         ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 12),
-                    child: Text(
-                      "CAMBIAR AGUA",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
                       ),
-                    ),
+                      Text(
+                        "Cambiar agua ahora",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.black26,
+                          height: 1.5,
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
             ),
           ),
-          SizedBox(height: 24),
+          SizedBox(height: 6),
           GestureDetector(
             onTap: () {
               print("hpoa");
@@ -530,33 +475,27 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ]),
                   SizedBox(width: 16),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Container(
-                          width: MediaQuery.of(context).size.width * .4,
-                          child: Text(
-                            "AGUA",
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                            ),
+                  Column(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 12),
+                        child: Text(
+                          "SERVIR COMIDA",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
                           ),
                         ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 12),
-                    child: Text(
-                      "SERVIR COMIDA",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
                       ),
-                    ),
+                      Text(
+                        "Servir comida ahora",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.black26,
+                          height: 1.5,
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),

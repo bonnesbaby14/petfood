@@ -14,16 +14,17 @@ class Splash extends StatefulWidget {
 }
 
 class _loginState extends State<Splash> {
-@override
+  @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    Timer _timer = Timer(const Duration(seconds: 5),(){print("hpñlaa");
-    
-    Navigator.pushReplacementNamed(context, "home");
-    }  );
+    Timer _timer = Timer(const Duration(seconds: 5), () {
+      print("hpñlaa");
 
+      Navigator.pushReplacementNamed(context, "home");
+    });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -132,7 +133,6 @@ class _AnimatedLiquidCircularProgressIndicator extends StatefulWidget {
 class _AnimatedLiquidCircularProgressIndicatorState
     extends State<_AnimatedLiquidCircularProgressIndicator>
     with SingleTickerProviderStateMixin {
-
   AnimationController _animationController;
 
   @override
@@ -145,11 +145,11 @@ class _AnimatedLiquidCircularProgressIndicatorState
 
     _animationController.addListener(() => setState(() {}));
     _animationController.addStatusListener((status) {
-      if(status == AnimationStatus.completed) {
-    // custom code here
-    print("object");
-    _animationController.reverse();
-  }
+      if (status == AnimationStatus.completed) {
+        // custom code here
+        print("object");
+        _animationController.reverse();
+      }
     });
     _animationController.repeat();
   }
@@ -164,18 +164,16 @@ class _AnimatedLiquidCircularProgressIndicatorState
 
   @override
   Widget build(BuildContext context) {
-    final percentage = _animationController.value * 100;
-  
+   
+
     return Center(
       child: SizedBox(
-        width: 98.0,
-        height: 98.0,
-        child: SpinKitFadingGrid(
-  color: Colors.purpleAccent,
-  size: 50.0,
-)
-      ),
+          width: 98.0,
+          height: 98.0,
+          child: SpinKitFadingGrid(
+            color: Colors.purpleAccent,
+            size: 50.0,
+          )),
     );
   }
 }
-
