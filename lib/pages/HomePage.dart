@@ -83,7 +83,7 @@ class _HomePageState extends State<HomePage> {
                                             children: <Widget>[
                                               Expanded(child: SizedBox()),
                                               Container(
-                                                width: 150,
+                                                width: 155,
                                                 child: Text(
                                                   "CROQUETAS",
                                                   style: TextStyle(
@@ -419,7 +419,7 @@ class _HomePageState extends State<HomePage> {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 12),
                         child: Text(
-                          "CAMBIAR COMIDA",
+                          "CAMBIAR AGUA",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 18,
