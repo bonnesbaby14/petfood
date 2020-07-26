@@ -6,7 +6,9 @@ import 'package:liquid_progress_indicator/liquid_progress_indicator.dart';
 import 'package:petfood/utils/Progress.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'dart:ui';
+import 'package:flutter_bluetooth_serial/flutter_bluetooth_serial.dart';
 import 'dart:async';
+
 
 class Splash extends StatefulWidget {
   @override
@@ -14,6 +16,8 @@ class Splash extends StatefulWidget {
 }
 
 class _loginState extends State<Splash> {
+   BluetoothConnection connection;
+  
   @override
   void initState() {
     // TODO: implement initState
