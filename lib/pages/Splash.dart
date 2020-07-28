@@ -8,7 +8,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'dart:ui';
 import 'package:flutter_bluetooth_serial/flutter_bluetooth_serial.dart';
 import 'dart:async';
-
+import 'package:flutter_blue/flutter_blue.dart';
 
 class Splash extends StatefulWidget {
   @override
@@ -17,15 +17,28 @@ class Splash extends StatefulWidget {
 
 class _loginState extends State<Splash> {
    BluetoothConnection connection;
+   FlutterBlue flutterBlue = FlutterBlue.instance;
   
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+    flutterBlue.startScan(timeout: Duration(seconds: 4));
+
+// Listen to scan results
+var subscription = flutterBlue.scanResults.listen((results) {
+    // do something with scan results
+    for (ScanResult r in results) {
+        print('${r.device.name} found! rssi: ${r.rssi}');
+    }
+});
+
+// Stop scanning
+flutterBlue.stopScan();
     Timer _timer = Timer(const Duration(seconds: 5), () {
       print("hpñlaa");
-
-      Navigator.pushReplacementNamed(context, "home");
+      String o="holapitaa";
+      Navigator.pushReplacementNamed(context, "home",arguments:o );
     });
   }
 

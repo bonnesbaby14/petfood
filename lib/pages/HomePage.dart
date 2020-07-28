@@ -7,15 +7,27 @@ import 'package:flutter_swiper/flutter_swiper.dart';
 import 'Splash.dart';
 
 class HomePage extends StatefulWidget {
+ 
+  
+  
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
   int indexpage = 0;
-    
+    @override
+  void initState() {
+    super.initState();
+    // TODO: implement initState
+
+     
+     
+  }
   @override
   Widget build(BuildContext context) {
+       String connection=ModalRoute.of(context).settings.arguments;
+     print(connection); 
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
