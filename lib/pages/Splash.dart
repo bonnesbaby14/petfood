@@ -27,6 +27,7 @@ class _loginState extends State<Splash> {
 
 // Listen to scan results
 var subscription = flutterBlue.scanResults.listen((results) {
+  print("hola");
     // do something with scan results
     for (ScanResult r in results) {
         print('${r.device.name} found! rssi: ${r.rssi}');
